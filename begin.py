@@ -4,6 +4,7 @@
 # In[1]:
 
 
+import sys
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
@@ -115,6 +116,10 @@ class AutoSetting():
 
 
 if __name__ == '__main__':
-    auto_start = AutoSetting()
+    if len(sys.argv) == 2:
+        auto_start = AutoSetting(sys.argv[1])
+    else: 
+        auto_start = AutoSetting()
+
     auto_start.main()
 
